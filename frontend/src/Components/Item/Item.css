@@ -4,7 +4,7 @@
 .item p{
     margin: 6px 0px;
 }
-.item-prices{
+.item-price{
     display: flex;
     gap: 20px;
 }
@@ -13,7 +13,8 @@
     font-size: 18px;
     font-weight: 500;
 }
-.item-old{
+.price-old{
+    text-decoration: line-through;
     color: #8c8c8c;
     font-size: 18px;
     font-weight: 300;

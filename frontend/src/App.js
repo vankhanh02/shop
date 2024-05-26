@@ -8,6 +8,7 @@ import ShopCate from './Pages/ShopCate';
 import ShopProduct from './Pages/ShopProduct'
 import Authentication from './Pages/Authentication';
 import ShopCart from './Pages/ShopCart';
+import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <div>
@@ -25,6 +26,7 @@ function App() {
         <Route path='/cart' element={<ShopCart/>}/>
         <Route path='/login' element={<Authentication/>}/>
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   );
