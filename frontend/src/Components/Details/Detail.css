@@ -1,0 +1,25 @@
+.detail{
+    display: flex;
+    margin: 0px 170px;
+
+}
+.detail-left{
+    display: flex;
+    gap: 17px;
+
+}
+.detail-img-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.detail-img-list img{
+    height: 163px;
+}
+.detail-main-image{
+    width: 586px;
+    height: 700px;
+}
+.detail-right{
+
+}

@@ -19,9 +19,9 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/mens' element={<ShopCate cate = "men" banner={men_banner}/>}/>
-        <Route path='/womens' element={<ShopCate cate = "women" banner={woman_banner}/>}/>
-        <Route path='/kids' element={<ShopCate cate = "kid" banner={kid_banner}/>}/>
+        <Route path='/mens' element={<ShopCate category = "men" banner={men_banner}/>}/>
+        <Route path='/womens' element={<ShopCate category = "women" banner={woman_banner}/>}/>
+        <Route path='/kids' element={<ShopCate category = "kid" banner={kid_banner}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/product' element={<ShopProduct/>}>
           <Route path=':productId' element={<ShopProduct/>}/>

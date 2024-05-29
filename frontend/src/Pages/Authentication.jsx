@@ -15,7 +15,7 @@ const Authentication = () => {
           Already have an account? 
           <span>Login</span>
         </p>
-        <div className="signupagress">
+        <div className="signupagree">
           <input type="checkbox" name='' id=''/>
           <p>By continuing, I agree to the terms of use and privacy policy</p>
         </div>
