@@ -1,19 +1,27 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import logo from '../Assets/store.png'
 import cart_icon from '../Assets/shopping-bag.png'
 import { ShopContext } from '../../Context/ShopContext'
-export const Navbar = () => {
+import dropdown from '../Assets/dropdown_icon.png'
+
+export const Navbar = (e) => {
   const [menu,setMenu] = useState("shop")
   const {getTotalCartItem} = useContext(ShopContext);
+  const menuRef = useRef();
+  const dropdown_toggle = (e) =>{
+    menuRef.current.classList.toggle('nav-memu-visible');
+    e.target.classList.toggle('open');
+  }
   return (
     <div className='navbar'>
       <div className="nav-logo">
-        <img src={logo} width="51px" height="51px" alt="Logo" />
+        <img src={logo} alt="Logo" />
         <p>SHOPPER</p>
       </div>
-      <ul className="nav-menu">
+      <img className= "nav-dropdown" onClick={dropdown_toggle} src={dropdown} alt="" />
+      <ul ref={menuRef} className="nav-menu">
           <li onClick={()=>{setMenu("shop")}}><Link to='/'>Shop </Link>{menu==="shop"?< hr/>: <></>} 
           </li>
           <li onClick={()=>{setMenu("men")}}><Link to='/mens'>Men </Link> {menu==="men"?< hr/>: <></>}
@@ -27,7 +35,7 @@ export const Navbar = () => {
         </ul>
         <div className="nav-login">
           <Link to ="/login"><button>Login</button></Link>
-          <Link to = "/cart"><img src={cart_icon} width="51px" height="51px" alt="cart" /></Link>
+          <Link to = "/cart"><img src={cart_icon}  alt="cart" /></Link>
           <div className="nav-cart-count">{getTotalCartItem()}</div>
         </div>
     </div>
