@@ -3,6 +3,7 @@
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
+    align-items: center;
 
 }
 .nav-logo{
@@ -93,6 +94,10 @@
     text-decoration: none;
 }
 
+.nav-dropdown{
+    display: none;
+}
+
 @media(max-width: 1280px){
     .navbar{
         padding: 12px 50px;
@@ -157,20 +162,36 @@
         height: 18px;
     }
 }
-.nav-dropdown{
-    width: 25px;
-    height: 25px;
-}
+
 @media(max-width: 800px){
     .navbar{
-        padding: 12px 30px;
+        padding: 10px 0px;
     }
-    
-
     .nav-menu{
-        font-size: 14px;
+        display: none;
+        height: 60px;
+        width: 100%;
         gap: 25px;
+        position: absolute;
+        justify-content: center;
+        background-color: white;
+        top: 60px;
 
+    }
+    .nav-dropdown{
+        display: block;
+        height: 25px;
+        width: 25px;
+        rotate: -90deg;
+        transition: 0.5s;
+        
+        cursor: pointer;
+    }
+    .nav-dropdown.open{
+        transform: rotate(90deg);
+    }
+    .nav-memu-visible{
+        display: flex;
     }
     .nav-login{
         gap: 30px;
@@ -191,5 +212,24 @@
         font-size: 12px;
         width: 18px;
         height: 18px;
+    }
+}
+@media(max-width: 500px){
+    .navbar{
+        width: 8px 0px;
+        gap: 0px;
+    }
+    .nav-logo{
+        scale: 0.8;
+    }
+    .nav-menu{
+        height: 70px;
+        top: 50px;
+    }
+    .nav-dropdown{
+        scale: 0.8;
+    }
+    .nav-login{
+        scale: 0.8;
     }
 }
