@@ -29,7 +29,7 @@ const Addproduct = () => {
 
         await fetch('http://localhost:4000/upload',{
             method:'POST',
-            header:{
+            headers:{
                 Accept: 'application/json',
             },
             body: formData,
