@@ -3,6 +3,14 @@ import './CSS/Authen.css'
 const Authentication = () => {
 
   const [state, setState] = useState("Login");
+  const [formData, setFormData ] = useState({
+    username:"",
+    password:"",
+    email:""
+  })
+  const changeHadler = (e) =>{
+    setFormData({...formData,[e.target.name]: e.target.value})
+  }
   
   const login = async () =>{
     console.log("Login Function Exe")
@@ -17,8 +25,8 @@ const Authentication = () => {
       <div className="container">
         <h1>{state}</h1>
         <div className="field">
-          {state==="Sign Up"?<input type="text" placeholder='Your Name' />: <></>}
-          <input type="email" placeholder='Your Email' />
+          {state==="Sign Up"?<input name='username' value={formData.username}type="text" placeholder='Your Name' />: <></>}
+          <input name='email' value={formData.email} onChange={changeHadler} type="email" placeholder='Your Email' />
           <input type="password" placeholder='Password' />
         </div>
         <button onClick={ ()=> { state==="Login"? login():signup()}}>Continue</button>
