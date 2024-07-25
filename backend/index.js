@@ -204,6 +204,74 @@ app.post('/login', async(req, res)=>{
 
 })
 
+// create new collection
+
+app.get('/newcollection', async(req, res)=>{
+    let products = await Product.find({});
+    let newcollection = products.slice(1).slice(-8);
+    console.log("New Collection Fetch");
+    res.send(newcollection);
+})
+// popular in woman
+app.get('/popularwomen', async(req, res)=>{
+    let products = await Product.find({category:"women"});
+    let popularwomen = products.slice(0,4);
+    console.log("Popular in women fetch");
+    res.send(popularwomen);
+})
+
+//CART
+
+// create middelware to fetch user
+    const fetchUser = async(req, res, next) =>{
+        const token = req.header('auth-token');
+        if (!token){
+            res.status(401).send({errors: "Please authenticate using valid token"})
+        }
+        else{
+            try{
+                const data = jwt.verify(token, 'secret_ecom');
+                req.user= data.user;
+                next();
+
+
+            }catch (error){
+                res.status(401).send({errors: "Please authenticate using valid token"})
+            }
+        }
+
+    }
+
+//get cart data
+
+app.post('/getcart', fetchUser, async(req,res)=>{
+    console.log("get cart");
+    let userData = await User.findOne({_id: req.user.id});
+    res.json(userData.cartData);
+})
+//add to cart
+
+app.post('/addtocart', fetchUser, async (req, res) =>{
+    console.log("added", req.body.itemId);
+    let userData = await User.findOne({_id:req.user.id});
+    userData.cartData[req.body.itemId] +=1;
+    await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
+    res.send("Added")
+
+})
+
+//remove from cart
+
+app.post('/removefromcart', fetchUser, async(req,res) =>{
+    console.log("removed", req.body.itemId);
+    let userData = await User.findOne({_id:req.user.id});
+    if(userData.cartData[req.body.itemId]>0)
+    userData.cartData[req.body.itemId] -=1;
+    await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
+    res.send("Removed")
+
+})
+
 app.listen(port, (error) => {
     if (!error){
         console.log("Server is running on Port " + port);
