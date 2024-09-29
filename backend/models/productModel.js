@@ -9,6 +9,7 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true },
 });
 
-const productModel = mongoose.models.product || ("product", productSchema);
+const productModel =
+  mongoose.models.product || mongoose.model("product", productSchema);
 
 export default productModel;

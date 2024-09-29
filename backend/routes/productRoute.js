@@ -1,9 +1,12 @@
 import express from "express";
-import { addproduct } from "../controllers/productController.js";
+import {
+  addProduct,
+  listProduct,
+  removeProduct,
+} from "../controllers/productController.js";
 import multer from "multer";
 
 const productRouter = express.Router();
-productRouter.post("/api/food", addproduct);
 
 //store image
 const storage = multer.diskStorage({
@@ -17,6 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 //upload endpoint
 
-productRouter.post("/addproduct", upload.single("image"), addproduct);
-
+productRouter.post("/addproduct", upload.single("image"), addProduct);
+productRouter.get("/allproduct", listProduct);
+productRouter.post("/deleteproduct", removeProduct);
 export default productRouter;
