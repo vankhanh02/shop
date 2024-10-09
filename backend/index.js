@@ -5,12 +5,9 @@ import cors from "cors";
 import { dbConnection } from "./config/dataconfig.js";
 import productModel from "./models/productModel.js";
 import productRouter from "./routes/productRoute.js";
+import userRouter from "./routes/userRoute.js";
+import "dotenv/config";
 const app = express();
-//const mongoose = require("mongoose");
-//const jwt = require("jsonwebtoken");
-//const multer = require("multer");
-//const path = require("path");
-//const { StringDecoder } = require("string_decoder");
 
 app.use(express.json());
 app.use(cors());
@@ -20,6 +17,9 @@ dbConnection();
 
 //endpoint for productRoutes
 app.use("/api/product", productRouter);
+//endport for userRoutes
+app.use("/api/user", userRouter);
+//endpoint for images
 app.use("/images", express.static("uploads/images"));
 //API create
 app.get("/", (req, res) => {
