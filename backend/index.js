@@ -3,7 +3,6 @@ const port = 4000;
 import express from "express";
 import cors from "cors";
 import { dbConnection } from "./config/dataconfig.js";
-import productModel from "./models/productModel.js";
 import productRouter from "./routes/productRoute.js";
 import userRouter from "./routes/userRoute.js";
 import "dotenv/config";

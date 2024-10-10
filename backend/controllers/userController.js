@@ -1,10 +1,17 @@
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 
 //login
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const {email, password} = req.body;
+  let check = await userModel.findOne({email = req.body.email});
+  if (check){
+    return res.status(400)
+  }
+  
+};
 //create token
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
@@ -34,7 +41,7 @@ const registerUser = async (req, res) => {
     }
     //hash user pass
     const salt = await bcrypt.genSalt(10);
-    const hashedPasswd = await bcrypt.hashSync(password, sailt);
+    const hashedPasswd = await bcrypt.hashSync(password, salt);
 
     //creat user
     const newUser = new userModel({
@@ -59,5 +66,10 @@ const registerUser = async (req, res) => {
     });
   }
 };
+const fetchUser = async(req,res)=>>{
 
-export { loginUser, registerUser };
+}
+const getCart = async (req,res) => {};
+const addToCart = async(req, res) =>{}
+const removeFromCart = async(req,res) =>{}
+export { loginUser, registerUser, getCart };
