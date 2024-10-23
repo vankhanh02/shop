@@ -1,0 +1,33 @@
+.hero-banner {
+  height: 40vw;
+  margin: 30px auto;
+  background: url("../Assets/images/hero_img.jpg") no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.hero-banner-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+}
+.hero-banner-content h2 {
+  font-weight: 500;
+  font-size: max(4.5vw, 22px);
+}
+.hero-banner-content p {
+  font-size: 1vw;
+}
+.hero-banner-content button {
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: #091057;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+}
