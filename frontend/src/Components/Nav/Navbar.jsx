@@ -44,21 +44,21 @@ export const Navbar = (e) => {
             setMenu("men");
           }}
         >
-          <Link to="/mens">Men </Link> {menu === "men" ? <hr /> : <></>}
+          <Link to="/men">Men </Link> {menu === "men" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
             setMenu("women");
           }}
         >
-          <Link to="/womens">Women </Link> {menu === "women" ? <hr /> : <></>}
+          <Link to="/women">Women </Link> {menu === "women" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
-            setMenu("kids");
+            setMenu("kid");
           }}
         >
-          <Link to="/kids">Kid </Link> {menu === "kids" ? <hr /> : <></>}
+          <Link to="/kid">Kid </Link> {menu === "kid" ? <hr /> : <></>}
         </li>
         <li
           onClick={() => {
@@ -69,19 +69,25 @@ export const Navbar = (e) => {
         </li>
       </ul>
       <div className="navbar-right">
-        <img src={search_icon} alt="search" />
         <div className="navbar-search-icon">
+          <img src={search_icon} className="icon-img" alt="search" />
+        </div>
+        <div className="navbar-cart">
           <Link to="/cart">
             <img src={cart_icon} alt="cart" />
           </Link>
           {/* {localStorage.getItem("auth-token") && getTotalCartItem() > 0 && (
             <div className="nav-cart-count">{getTotalCartItem()}</div>
           )} */}
-          <div className="nav-cart-count">{getTotalCartItem()}</div>
+          <div className="nav-cart-count">
+            {" "}
+            <p>{getTotalCartItem()}</p>
+          </div>
         </div>
         {localStorage.getItem("auth-token") ? (
           <>
             <button
+              className="navbar-login"
               onClick={() => {
                 localStorage.removeItem("auth-token");
                 window.location.replace("/");
@@ -92,7 +98,7 @@ export const Navbar = (e) => {
           </>
         ) : (
           <Link to="/login">
-            <button>Login</button>
+            <button className="navbar-login">Login</button>
           </Link>
         )}
       </div>

@@ -1,6 +1,6 @@
 .hero-banner {
-  height: 40vw;
-  margin: 30px auto;
+  height: 50vw;
+  margin: 20px auto;
   background: url("../Assets/images/hero_img.jpg") no-repeat;
   background-size: contain;
   position: relative;
@@ -12,12 +12,12 @@
   align-items: start;
   gap: 1.5vw;
   max-width: 50%;
-  bottom: 10%;
+  bottom: 20%;
   left: 6vw;
 }
 .hero-banner-content h2 {
   font-weight: 500;
-  font-size: max(4.5vw, 22px);
+  font-size: max(4.5vw, 20px);
 }
 .hero-banner-content p {
   font-size: 1vw;

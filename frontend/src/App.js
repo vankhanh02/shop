@@ -19,15 +19,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/mens"
+            path="/men"
             element={<ShopCate category="men" banner={men_banner} />}
           />
           <Route
-            path="/womens"
+            path="/women"
             element={<ShopCate category="women" banner={woman_banner} />}
           />
           <Route
-            path="/kids"
+            path="/kid"
             element={<ShopCate category="kid" banner={kid_banner} />}
           />
           <Route path="/about" element={<About />} />

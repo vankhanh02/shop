@@ -4,11 +4,14 @@ const Banner = () => {
   return (
     <div className="hero-banner">
       <div className="hero-banner-content">
-        <h2>Order your favorite sneaker here</h2>
+        <h2>Step Up</h2>
+        <h2>Your Sneaker!</h2>
         <p>
-          Exploring our latest collection, embarking the amazing experience!
+          From classic styles to exclusive drops, we've got the perfect pair to
+          elevate your streetwear. Comfort, performance, and style — all in one
+          place. Don't miss out on your favorite kicks!
         </p>
-        <button>Shop now</button>
+        <button>Shop now 👟</button>
       </div>
     </div>
   );
