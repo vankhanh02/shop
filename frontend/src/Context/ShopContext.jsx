@@ -19,7 +19,7 @@ const ShopContextProvider = (props) => {
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/allproduct")
+    fetch("http://localhost:4000/api/product/allproduct")
       .then((response) => response.json())
       .then((data) => setAll_Product(data));
 

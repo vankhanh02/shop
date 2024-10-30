@@ -30,4 +30,5 @@
   background-color: #091057;
   font-size: max(1vw, 13px);
   border-radius: 50px;
+  cursor: pointer;
 }
