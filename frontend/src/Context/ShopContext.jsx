@@ -18,10 +18,13 @@ const ShopContextProvider = (props) => {
   const url = "http://localhost:4000";
   const [token, setToken] = useState("");
 
+  /* const fetchFoodList = async () => {
+    setAll_Product(response.data.data);
+  }; */
   useEffect(() => {
     fetch("http://localhost:4000/api/product/allproduct")
       .then((response) => response.json())
-      .then((data) => setAll_Product(data));
+      .then((data) => setAll_Product(data.data));
 
     if (localStorage.getItem("auth-token")) {
       fetch("http://localhost:4000/getcart", {

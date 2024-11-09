@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
-import './CSS/ShopCate.css'
-import { ShopContext } from '../Context/ShopContext'
-import Item from '../Components/Item/Item'
-import dropdown_icon from '../Components/Assets/dropdown_icon.png'
+import React, { useContext } from "react";
+import "./CSS/ShopCate.css";
+import { ShopContext } from "../Context/ShopContext";
+import Item from "../Components/Item/Item";
+import dropdown_icon from "../Components/Assets/dropdown_icon.png";
+//import all_product from "../Components/Assets/all_product.js";
 const ShopCate = (props) => {
-  const {all_product} = useContext(ShopContext)
+  const { all_product } = useContext(ShopContext);
   return (
     <div className="shop-cate">
       <img className="banner" src={props.banner} alt="" />
@@ -17,23 +18,26 @@ const ShopCate = (props) => {
         </div>
       </div>
       <div className="product">
-        {all_product.map((item, i)=>{
-          if (props.category === item.category){
-            return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-          }
-          else{
+        {all_product.map((item, i) => {
+          if (props.category === item.category) {
+            return (
+              <Item
+                key={i}
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                new_price={item.new_price}
+                old_price={item.old_price}
+              />
+            );
+          } else {
             return null;
           }
-
         })}
       </div>
-      <div className="loadmore">
-        Explore More
-
-      </div>
-
+      <div className="loadmore">Explore More</div>
     </div>
-  )
-}
+  );
+};
 
-export default ShopCate
+export default ShopCate;

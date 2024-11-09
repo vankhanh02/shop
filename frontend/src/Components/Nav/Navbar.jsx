@@ -70,11 +70,11 @@ export const Navbar = (e) => {
       </ul>
       <div className="navbar-right">
         <div className="navbar-search-icon">
-          <img src={search_icon} className="icon-img" alt="search" />
+          <img src={search_icon} className="search-img" alt="search" />
         </div>
         <div className="navbar-cart">
           <Link to="/cart">
-            <img src={cart_icon} alt="cart" />
+            <img src={cart_icon} className= "cart-img" alt="cart" />
           </Link>
           {/* {localStorage.getItem("auth-token") && getTotalCartItem() > 0 && (
             <div className="nav-cart-count">{getTotalCartItem()}</div>

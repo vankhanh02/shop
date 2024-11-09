@@ -79,19 +79,19 @@
 .navbar button:hover {
   background: #f2f7ff;
 }
-/*click*/
-/* .nav-login button:active {
-  background: #f3f3f3;
-} */
 .navbar-search-icon {
   position: relative;
 }
-.navbar-search-icon .icon-img {
+.navbar-search-icon .search-img {
   height: 30px;
   width: 30px;
 }
 .navbar-cart {
   position: relative;
+}
+.navbar-cart .cart-img {
+  width: 40px;
+  height: 40px;
 }
 .navbar-cart .nav-cart-count {
   position: absolute;
@@ -112,9 +112,6 @@
   text-decoration: none;
 }
 
-.navbar-login {
-  margin-right: 20px;
-}
 .nav-dropdown {
   display: none;
 }
@@ -134,18 +131,26 @@
     font-size: 16px;
     gap: 30px;
   }
-  .nav-login {
-    gap: 30px;
-  }
-  .nav-login button {
-    font-size: 16px;
-    height: 45px;
-    width: 120px;
-  }
-
   .nav-cart-count {
     margin-left: -45px;
     font-size: 12px;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+  .navbar-search-icon .search-img {
+    height: 25px;
+    width: 25px;
+  }
+  .navbar-cart .cart-img {
+    width: 35px;
+    height: 35px;
+  }
+  .navbar button {
+    width: 108px;
+    height: 46px;
+    font-size: 16px;
   }
 }
 
@@ -158,24 +163,22 @@
     font-size: 14px;
     gap: 25px;
   }
-  .nav-login {
-    gap: 30px;
-  }
-  .nav-login button {
-    font-size: 14px;
-    height: 35;
-    width: 80px;
-  }
-  .nav-login img {
-    width: 40px;
-    height: 40px;
-  }
 
-  .nav-cart-count {
-    margin-left: -45px;
-    font-size: 12px;
-    width: 18px;
-    height: 18px;
+  .navbar-right {
+    gap: 15px;
+  }
+  .navbar-search-icon .search-img {
+    height: 20px;
+    width: 20px;
+  }
+  .navbar-cart .cart-img {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar button {
+    width: 96px;
+    height: 40px;
+    font-size: 14px;
   }
 }
 

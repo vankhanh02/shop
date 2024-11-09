@@ -5,12 +5,34 @@ import validator from "validator";
 
 //login
 const loginUser = async (req, res) => {
-  const {email, password} = req.body;
-  let check = await userModel.findOne({email = req.body.email});
-  if (check){
-    return res.status(400)
+  const { email, password } = req.body;
+  try {
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.json({
+        success: false,
+        message: "User doesn't exist",
+      });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.json({
+        success: false,
+        message: "Invalid Credentials",
+      });
+    }
+
+    const token = createToken(user._id);
+    return res.json({
+      success: true,
+      token,
+    });
+  } catch (error) {
+    return res.json({
+      success: false,
+      message: "Error",
+    });
   }
-  
 };
 //create token
 const createToken = (id) => {
@@ -54,7 +76,7 @@ const registerUser = async (req, res) => {
     const token = createToken(user._id);
     res.json({
       success: true,
-      message: "Create user successfully",
+      token,
     });
 
     //creat token and send token to user
@@ -66,10 +88,8 @@ const registerUser = async (req, res) => {
     });
   }
 };
-const fetchUser = async(req,res)=>>{
-
-}
-const getCart = async (req,res) => {};
-const addToCart = async(req, res) =>{}
-const removeFromCart = async(req,res) =>{}
+const fetchUser = async (req, res) => {};
+const getCart = async (req, res) => {};
+const addToCart = async (req, res) => {};
+const removeFromCart = async (req, res) => {};
 export { loginUser, registerUser, getCart };
