@@ -20,12 +20,20 @@
   border: 1px solid #888;
 }
 
-.product {
+/* .product {
   margin: 20px 170px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 80px;
+} */
+.product {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  row-gap: 80px;
+  gap: 30px;
 }
+
 .loadmore {
   display: flex;
   justify-content: center;

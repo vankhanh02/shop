@@ -60,13 +60,13 @@ export const Navbar = (e) => {
         >
           <Link to="/kid">Kid </Link> {menu === "kid" ? <hr /> : <></>}
         </li>
-        <li
+        {/* <li
           onClick={() => {
             setMenu("about");
           }}
         >
           <Link to="/about">About </Link> {menu === "about" ? <hr /> : <></>}
-        </li>
+        </li> */}
       </ul>
       <div className="navbar-right">
         <div className="navbar-search-icon">
@@ -74,7 +74,7 @@ export const Navbar = (e) => {
         </div>
         <div className="navbar-cart">
           <Link to="/cart">
-            <img src={cart_icon} className= "cart-img" alt="cart" />
+            <img src={cart_icon} className="cart-img" alt="cart" />
           </Link>
           {/* {localStorage.getItem("auth-token") && getTotalCartItem() > 0 && (
             <div className="nav-cart-count">{getTotalCartItem()}</div>
