@@ -1,0 +1,23 @@
+.explore-collection {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+.explore-collection h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.explore-collection hr {
+  width: 200px;
+  height: 6px;
+  border-radius: 10px;
+  background: #bdbdbd;
+}
+.explore-collection-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 50px;
+  gap: 30px;
+}

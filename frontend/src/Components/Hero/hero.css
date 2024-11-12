@@ -1,56 +1,55 @@
-.hero{
-    height: 100vh;
-    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
-    display: flex;
+.hero-banner {
+  height: 50vw;
+  margin: 20px auto;
+  background: url("../Assets/images/hero_img.jpg") no-repeat;
+  background-size: contain;
+  position: relative;
 }
-.hero-left{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding-left: 200px;
-    line-height: 1.1;
-
+.hero-banner-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 20%;
+  left: 6vw;
+  animation: fadeIn 3s;
 }
-.hero-left h2{
-    color: #090909;
-    font-size: 26px;
-    font-weight: 600;
+.hero-banner-content h2 {
+  font-weight: 500;
+  font-size: max(4.5vw, 20px);
 }
-.hero-left p{
-    color: #171717;
-    font-size: 90px;
-    font-weight: 600;
+.hero-banner-content p {
+  font-size: 1vw;
 }
-.hand-icon{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.hero-banner-content button {
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: #091057;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  cursor: pointer;
 }
-.hand-icon img{
-    width: 105px;
-
-}
-.hero-latest-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:15px;
-    width: 310px;
-    height: 70px;
-    border-radius: 75px;
-    margin-top: 30px;
-    background-color: #ff4141;
-    color: white;
-    font-size: 22px;
-    font-weight: 500;
-
+@media (max-width: 1050px) {
+  .hero-banner {
+    height: 38vw;
+  }
+  .hero-banner-content {
+    max-width: 45%;
+  }
 }
 
-.hero-right{
-    flex:1;
-    display: flex;
-    align-items: center;
-    justify-items: center;
+@media (max-width: 750px) {
+  .hero-banner-content {
+    max-width: 55%;
+  }
+  .hero-banner-content p {
+    display: none;
+  }
+  .hero-banner-content button {
+    padding: 2vw 4vw;
+  }
 }

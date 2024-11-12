@@ -1,70 +1,80 @@
-.authen{
-    width: 100%;
-    height: 80vh;
-    background: #fce3fe;
-    padding-top: 100px;
-
-}
-.container{
-    width: 580px;
-    height: 600px;
-    background-color: white;
-    margin: auto;
-    padding: 40px 60px;
-
-}
-.container h1{
-    margin: 20px 0px;
-  
-}
-.field{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 30px;
-
+.authen {
+  width: 100%;
+  height: 80vh;
+  background: #f0f4f9;
+  padding-top: 100px;
 }
 
-.field input{
-    height: 72px;
-    width: 100%;
-    padding-left: 20px;
-    color: #5c5c5c;
-    border: 1px solid #c9c9c9;
-    outline: none;
-    font-size: 18px;
-
+.container {
+  width: 580px;
+  height: auto;
+  background-color: white;
+  margin: auto;
+  padding: 40px 60px;
+  border-radius: 25px;
+  transition: height 0.3s ease-in-out;
 }
 
-.container button{
-    width: 580px;
-    height: 72px;
-    color:white;
-    background: #ff4141;
-    margin-top: 30px;
-    border: none;
-    font-size: 24px;
-    font-weight: 500;
-    cursor: pointer;
+.container.login {
+  height: 520px;
 }
 
-.loginmess{
-    margin-top: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
+.container.signup {
+  height: 680px;
 }
-.loginmess span{
-    color: #ff4141;
-    font-weight: 600;
-    cursor: pointer;
+
+.container h1 {
+  margin: 20px 0px;
 }
-.signupagree{
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-    gap: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.field input {
+  height: 72px;
+  width: 100%;
+  padding-left: 20px;
+  color: #5c5c5c;
+  border: 1px solid #c9c9c9;
+  outline: none;
+  font-size: 18px;
+}
+
+.container button {
+  width: 100%;
+  height: 72px;
+  color: white;
+  background: #ff4141;
+  margin-top: 30px;
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.loginmess {
+  margin-top: 20px;
+  color: #5c5c5c;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loginmess span {
+  color: #ff4141;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signupagree {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 20px;
+  color: #5c5c5c;
+  font-size: 18px;
+  font-weight: 500;
 }
