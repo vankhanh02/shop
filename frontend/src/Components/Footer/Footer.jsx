@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import footer_img from "../Assets/logo_big.png";
 import insta_icon from "../Assets/instagram_icon.png";
 import pinicon from "../Assets/pintester_icon.png";
 import whatassp from "../Assets/whatsapp_icon.png";
