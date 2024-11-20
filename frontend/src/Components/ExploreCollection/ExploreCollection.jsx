@@ -1,7 +1,6 @@
 import React from "react";
 import "./ExploreCollection.css";
 import explore from "../Assets/Explore/explore-collection.js";
-import Item from "../Item/Item";
 import ExploreCard from "../ExploreCard/ExploreCard.jsx";
 const ExploreCollection = () => {
   return (
