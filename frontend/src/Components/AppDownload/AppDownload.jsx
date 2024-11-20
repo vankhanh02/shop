@@ -8,7 +8,7 @@ const AppDownload = () => {
       <p>
         For Better Experience Download <br /> Shopper App
       </p>
-      <div className="apop-download-flatform">
+      <div className="app-download-flatform">
         <img src={play_store} alt="" />
         <img src={app_store} alt="" />
       </div>

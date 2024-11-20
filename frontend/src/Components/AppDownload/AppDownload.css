@@ -21,3 +21,9 @@
 .app-download-flatform img:hover {
   transform: scale(1.05);
 }
+@media (max-width: 500px) {
+  .app-download-flatform {
+    display: flex;
+    flex-direction: column;
+  }
+}

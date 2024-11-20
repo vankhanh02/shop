@@ -47,9 +47,15 @@
     border-radius: 10px;
     background: #bdbdbd;
   }
+}
+@media (max-width: 500px) {
+  .collection {
+    height: 200vh;
+  }
   .collect {
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    row-gap: 40px;
   }
 }

@@ -1,9 +1,11 @@
 .hero-banner {
-  height: 50vw;
+  height: 45vw;
   margin: 20px auto;
   background: url("../Assets/images/hero_img.jpg") no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   position: relative;
+
   z-index: 1;
 }
 .hero-banner-content {
@@ -35,9 +37,6 @@
   cursor: pointer;
 }
 @media (max-width: 1050px) {
-  .hero-banner {
-    height: 38vw;
-  }
   .hero-banner-content {
     max-width: 45%;
   }

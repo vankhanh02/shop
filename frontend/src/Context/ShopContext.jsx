@@ -57,7 +57,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem("auth-token")) {
-      fetch(`${BASE_URL}/api/cart/addtocart`, {
+      fetch(`${BASE_URL}/api/cart/removefromcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",

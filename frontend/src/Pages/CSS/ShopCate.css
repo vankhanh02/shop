@@ -1,6 +1,8 @@
 .banner {
   display: block;
-  margin: 30px auto;
+  width: 100%; /* Make the banner take full width of the parent container */
+  height: auto; /* Maintain aspect ratio */
+  margin: 30px auto; /* Keep the margin as it is */
 }
 .indexSort {
   display: flex;

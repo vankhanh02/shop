@@ -1,11 +1,27 @@
-.breadcrum{
-    display: flex;
-    align-items: center;
-    color: #495057;
-    gap: 8px;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 60px 170px;
-    text-transform: capitalize;
+.breadcrum {
+  display: flex;
+  align-items: center;
+  color: #495057;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px auto;
+  text-transform: capitalize;
+}
 
+@media (max-width: 700px) {
+  .breadcrum {
+    font-size: 16px;
+  }
+  .breadcrum img {
+    height: 13px;
+  }
+}
+@media (max-width: 500px) {
+  .breadcrum {
+    font-size: 13px;
+  }
+  .breadcrum img {
+    height: 10px;
+  }
 }

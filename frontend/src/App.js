@@ -31,9 +31,10 @@ function App() {
             element={<ShopCate category="kid" banner={kid_banner} />}
           />
           <Route path="/about" element={<About />} />
-          <Route path="/product" element={<ShopProduct />}>
+          {/* <Route path="/product" element={<ShopProduct />}>
             <Route path=":productId" element={<ShopProduct />} />
-          </Route>
+          </Route> */}
+          <Route path="/product/:productId" element={<ShopProduct />} />
           <Route path="/cart" element={<ShopCart />} />
           <Route path="/login" element={<Authentication />} />
         </Routes>
