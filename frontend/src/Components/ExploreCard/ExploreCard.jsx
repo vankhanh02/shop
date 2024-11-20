@@ -10,7 +10,7 @@ const ExploreCard = (props) => {
         background: `url(${props.image}) no-repeat center/cover`,
       }}
     >
-      <Link to={`/${props.category}`}>
+      <Link to={`/${props.category}s`}>
         <p className="cardlabel">{props.category} collection</p>
         <button>Explore Now</button>
       </Link>
