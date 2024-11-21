@@ -47,7 +47,8 @@ app.use("/images", express.static(path.join(__dirname, "upload/images")));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `${baseURL}:${port}/images/${req.file.filename}`,
+    /* image_url: `${baseURL}:${port}/images/${req.file.filename}`, */
+    image_url: `${req.file.filename}`,
   });
 });
 app.use("/api/product", productRouter);

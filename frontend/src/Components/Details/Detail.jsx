@@ -4,6 +4,8 @@ import star_icon from "../Assets/star_icon.png";
 import star_2_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const Detail = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
@@ -15,17 +17,19 @@ const Detail = (props) => {
     }
   };
 
+  const image_url = `${BASE_URL}/images/${product.image}`;
+
   return (
     <div className="detail">
       <div className="detail-left">
         <div className="detail-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <img src={image_url} alt="" />
+          <img src={image_url} alt="" />
+          <img src={image_url} alt="" />
+          <img src={image_url} alt="" />
         </div>
         <div className="detail-dis-img">
-          <img className="detail-main-image" src={product.image} alt="" />
+          <img className="detail-main-image" src={image_url} alt="" />
         </div>
       </div>
       <div className="detail-right">

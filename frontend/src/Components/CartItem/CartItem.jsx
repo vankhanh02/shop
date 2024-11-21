@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import "./CartItem.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const CartItem = () => {
   const { all_product, cartItems, removeFromCart, getTotalCartAmount } =
     useContext(ShopContext);
@@ -25,7 +28,7 @@ const CartItem = () => {
               <div>
                 <div className="cart-items-title cart-items-item">
                   <img
-                    src={e.image}
+                    src={`${BASE_URL}/images/${e.image}`}
                     alt=""
                     className="cartitems-product-icon"
                   />
