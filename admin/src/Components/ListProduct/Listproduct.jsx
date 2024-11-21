@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Listproduct.css";
 import remove_icon from "../../assets/cross_icon.png";
+
 const Listproduct = () => {
   const [allproduct, setAllProducts] = useState([]);
+  const BASE_URL = "https://shop-backend-wi82.onrender.com";
 
   const fetchInfo = async () => {
-    await fetch("http://localhost:4000/api/product/allproduct")
+    await fetch(`${BASE_URL}/api/product/allproduct`)
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);
@@ -16,7 +18,7 @@ const Listproduct = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch("http://localhost:4000/api/product/deleteproduct", {
+    await fetch(`${BASE_URL}/api/product/deleteproduct`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -43,7 +45,7 @@ const Listproduct = () => {
           <>
             <div key={index} className="listproduct-format">
               <img
-                src={product.image}
+                src={`${BASE_URL}/images/${product.image}`}
                 alt=""
                 className="listproduct-main-img"
               />

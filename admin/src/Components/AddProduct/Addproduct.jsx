@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Addproduct.css";
 import upload_area from "../../assets/upload_area.svg";
+
 const Addproduct = () => {
   const [image, setImage] = useState(false);
-
+  const BASE_URL = "https://shop-backend-wi82.onrender.com";
   const imageHandler = (e) => {
     setImage(e.target.files[0]);
   };
@@ -26,7 +27,7 @@ const Addproduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("http://localhost:4000/upload", {
+    await fetch(`${BASE_URL}/upload`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -41,7 +42,7 @@ const Addproduct = () => {
     if (resData.success) {
       product.image = resData.image_url;
       console.log(product);
-      await fetch("http://localhost:4000/api/product/addproduct", {
+      await fetch(`${BASE_URL}/api/product/addproduct`, {
         method: "POST",
         headers: {
           Accept: "application/json",
